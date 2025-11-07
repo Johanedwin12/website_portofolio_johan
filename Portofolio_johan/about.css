@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+.navbar {
+    font-family: roboto, sans-serif;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.warna-logo{
+    color: rgb(255, 230, 0);
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transform: scale(3.5);
+    transform-origin: center center;
+}
+
+.nav-links {
+    list-style: none; 
+    display: flex; 
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: border-bottom 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0; 
+    height: 2px; 
+    background-color: rgb(255, 230, 0); 
+    transition: width 0.3s ease-in-out; 
+}
+
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display:  none;
+        margin: 0;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: #000000;
+        padding: 10px 20px;
+        text-align: right;
+        z-index: 100;
+    }   
+
+    .nav-links.responsive {
+    display: flex;
+    }
+
+    .nav-links li {
+    margin: 5px 0;
+    }
+
+    .menu-icon {
+    display: block;
+    }
+}
+
+.content-about {
+    max-width: 1200px;
+    margin: auto;
+    padding: 150px 10px;
+    color: white;
+    font-size: 30px;
+    opacity: 0;
+    animation: slideInFromLeft 1.5s ease-out 0.05s forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
